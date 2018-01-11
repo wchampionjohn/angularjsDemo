@@ -1,0 +1,29 @@
+<html ng-app="app">
+  <meta charset="utf-8">
+  <title>TODO list</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+  <script type="text/javascript" src="example04.js"></script>
+
+  <body ng-controller="TodoCrtlRemovable">
+    <h1>Todo List</h1>
+    <form ng-submit="addItem()">
+      <input type="text" ng-model="newItem" name="newItem" />
+      <input type="submit" id="submit" value="新增待辦事項" />
+    </form>
+    <ul id="todo">
+      <li ng-repeat="item in todoList | filter:{isFinish:false}">
+        <input type="checkbox" ng-click="removeItem(item)">
+        {{item.label| lowercase }}
+      </li>
+    </ul>
+
+    <hr>
+
+    <h1>Finished!</h1>
+    <ul id="finish">
+      <li ng-repeat="item in todoList | filter:{isFinish:true}">
+        {{item.label}}
+      </li>
+    </ul>
+  </body>
+</html>

@@ -1,29 +1,21 @@
-<html ng-app>
-  <meta charset="utf-8">
-  <title>TODO list</title>
-  <script type="text/javascript" src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
-  <script type="text/javascript" src="example03.js"></script>
-
-  <body ng-controller="TodoCrtlRemovable">
-    <h1>Todo List</h1>
-    <form ng-submit="addItem()">
-      <input type="text" ng-model="newItem" name="newItem" />
-      <input type="submit" id="submit" value="新增待辦事項" />
-    </form>
-    <ul id="todo">
-      <li ng-repeat="item in todoList | filter:{isFinish:false}">
-        <input type="checkbox" ng-click="removeItem(item)">
-        {{item.label| lowercase }}
-      </li>
-    </ul>
-
-    <hr>
-
-    <h1>Finished!</h1>
-    <ul id="finish">
-      <li ng-repeat="item in todoList | filter:{isFinish:true}">
-        {{item.label}}
-      </li>
-    </ul>
+<html ng-app="app">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="example03.js"></script>
+  </head>
+  <body>
+    <div ng-controller="indexCtrl">
+      <div class="container" ng-controller="indexCtrl">
+      <ul id="todo">
+        <li ng-repeat="item in items">
+          商品：{{item.title}}
+          金額：$ {{item.price}}
+          數量：<input type="number" ng-model="item.quantity" /><br />
+        </li>
+      </ul>
+      運費：{{getCosts()}}
+      <br />
+      總金額：{{getTotal()}}
+    </div>
   </body>
 </html>
