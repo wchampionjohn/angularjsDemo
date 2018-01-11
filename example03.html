@@ -9,11 +9,13 @@
         <li ng-repeat="item in items">
           商品：{{item.title}}
           金額：$ {{item.price}}
-          數量：<input type="number" ng-model="item.quantity" /><br />
+          數量：<input type="number" ng-model="item.quantity" ng-change="updateQuantity(item)"/><br />
         </li>
       </ul>
       <br />
       總金額：{{getTotal()}}
+      運費：{{getCosts()}}
     </div>
   </body>
 </html>
+

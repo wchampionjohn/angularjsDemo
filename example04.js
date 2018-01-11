@@ -13,4 +13,13 @@ app.controller('TodoCrtlRemovable', function($scope) {
     item.isFinish = true;
   }
 
+  $scope.deleteItem = function(item){
+     $scope.todoList = $scope.todoList.filter(function(i){
+      return i != item
+    })
+  }
+  $scope.clear = function(){
+    $scope.todoList = []
+  }
+
 })

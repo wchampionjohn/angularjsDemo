@@ -6,9 +6,16 @@
   <body>
     <div>
       <label>Name:</label>
-      <input type="text" ng-model="yourName" placeholder="Enter a name here">
+      <input type="text" ng-model="firstName" placeholder="Enter a first name here">
+      <input type="text" ng-model="lastName" placeholder="Enter a last name here">
+      <br />
+      <label>Age:</label>
+      <input type="number" ng-model="age" placeholder="Enter a age here">
+      <span ng-show="age < 1">age不能小於1</span>
       <hr>
-      <h1>Hello {{yourName}}!</h1>
+      <h1>Hello {{firstName}} {{lastName}}!</h1>
+      <h1 ng-show="age && age > 1">your  {{age}} years old</h1>
+      <h1 ng-show="age && age > 1">I am a {{age > 18 ? 'audlt' : 'child'}}</h1>
     </div>
   </body>
 </html>

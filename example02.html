@@ -6,6 +6,7 @@
   <body>
     金額：<input type="text" ng-model="price" ng-init="price=300" /><br />
     數量：<input type="number" ng-model="amt" ng-init="amt=1" /><br />
-    總金額：{{price * amt}}
+    總金額：{{(price * amt) > 1000 ? (price * amt) - 100 : price * amt }}
+    運費：{{ (price * amt) > 1000 ? 50 : 100 }}
   </body>
 </html>
